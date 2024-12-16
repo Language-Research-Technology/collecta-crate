@@ -11,4 +11,8 @@ This library will interface with an ro-crate api (now Oni)
 - [x] /search
 - [x] /auth
 - [x] /files
-- [x] provide example.py
+- [x] provide basic example
+- [x] provide example for searching
+- [x] provide example for downloading files
+- [ ] write documentation for the examples
+- [ ] write documentation for client
