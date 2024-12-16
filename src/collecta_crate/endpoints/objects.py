@@ -16,15 +16,14 @@ class Objects:
         return self.client.get(f"{OBJECTS}", params=params)
 
     # what is types!!??
-    def _get_object_meta(self, object_id, resolve_parts, types=False, noUrid=False, raw=False, zip=False):
+    def _get_object_meta(self, object_id, resolve_parts, noUrid=False):
         params = {
             'id': object_id,
-            'resolve_parts': resolve_parts,
-            'types': types,
-            'noUrid': noUrid,
-            'raw': raw,
-            'zip': zip
+            'resolve_parts': resolve_parts
         }
+        if noUrid:
+            params.update({'noUrid': noUrid})
+
         return self.client.get(f"{OBJECTS}/meta/", params)
 
     def get_zip(self, object_id):
@@ -63,8 +62,8 @@ class Objects:
         )
 
     def get_rocrate(self, object_id, with_remote_uri=False):
-        return self._get_object_meta(object_id=object_id, noUrid=True, resolve_parts=False, raw=not with_remote_uri)
+        return self._get_object_meta(object_id=object_id, noUrid=not with_remote_uri, resolve_parts=False)
 
     def get_distributed_rocrate(self, object_id, with_remote_uri=False):
-        return self._get_object_meta(object_id=object_id, noUrid=True, resolve_parts=True, raw=not with_remote_uri)
+        return self._get_object_meta(object_id=object_id, noUrid=not with_remote_uri, resolve_parts=True)
 

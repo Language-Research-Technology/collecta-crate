@@ -30,16 +30,13 @@ def test_get_object(objects, mock_client):
 
 
 def test_get_object_meta(objects, mock_client):
-    objects._get_object_meta(object_id='123', resolve_parts=True, types='type1', noUrid=False, raw=True, zip=False)
+    objects._get_object_meta(object_id='123', resolve_parts=True, noUrid=True)
     mock_client.get.assert_called_once_with(
         'object/meta/',
         {
             'id': '123',
             'resolve_parts': True,
-            'types': 'type1',
-            'noUrid': False,
-            'raw': True,
-            'zip': False
+            'noUrid': True
         }
     )
 
@@ -111,11 +108,7 @@ def test_get_rocrate(objects, mock_client):
         'object/meta/',
         {
             'id': '123',
-            'resolve_parts': False,
-            'types': False,
-            'noUrid': True,
-            'raw': False,
-            'zip': False
+            'resolve_parts': False
         }
     )
 
@@ -127,9 +120,6 @@ def test_get_distributed_rocrate(objects, mock_client):
         {
             'id': '456',
             'resolve_parts': True,
-            'types': False,
-            'noUrid': True,
-            'raw': True,
-            'zip': False
+            'noUrid': True
         }
     )

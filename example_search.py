@@ -42,7 +42,19 @@ body = {
                         ]
                     }
                 }
-            ]
+            ],
+            "must":{
+                "multi_match": {
+                    "query": "flood",
+                    "fields": [
+                        "name.@value",
+                        "description.@value",
+                        "inLanguage.name.@value",
+                        "_text"
+                    ],
+                    "type": "best_fields"
+                }
+            }
         }
     },
     "size": 40,
@@ -50,7 +62,7 @@ body = {
     "track_total_hits": True
 }
 
-## Print all CSVs found
+## Search all CSVs that have 'flood' in the text
 items = client.search.index(
     index='items',
     body=body
