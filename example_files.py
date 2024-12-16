@@ -52,11 +52,7 @@ else:
     json_crate = client.objects.get_rocrate(f2f_id, with_remote_uri=True)
 
     rocrate = Crate(json_crate)
-    ## List things in the crate
-    # I could not do this below
-    #root = rocrate.root
-    metadata = rocrate.get("ro-crate-metadata.json")
-    root = rocrate.get(metadata["about"]["@id"])
+    root = rocrate.root()
     for part in root.props['hasPart']:
         print(f"{part['@id']}")
         parsed_url = urlparse(part['@id'])
