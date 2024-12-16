@@ -1,12 +1,15 @@
-## This is a proof of concept of a TinyCrate
+## This is a proof of concept of an ro-crate-api client
 
-TODO: Remove from https://github.com/Sydney-Informatics-Hub/rocrate-tabular
+TODO: Is TinyCrate ROCrate Abastract is added via github (get from PyPi when availalble)
+TODO: Use with https://github.com/Sydney-Informatics-Hub/rocrate-tabular ?
 
-
-This library will interface with an ro-crate api or a crate in file
+This library will interface with an ro-crate api (now Oni)
 
 ## TODO
 
 - Test Mock HTTP headers with auth
-- Do we need to do a one-to-one with an ro-crate-api spec?
-- 
+- [*] /object
+- [ ] /search
+- [ ] /auth
+- [ ] /files
+- [*] provide example.py
