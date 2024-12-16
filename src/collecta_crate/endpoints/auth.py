@@ -1,4 +1,4 @@
-AUTH = '/auth'
+AUTH = 'auth'
 
 class Auth:
     def __init__(self, client):
