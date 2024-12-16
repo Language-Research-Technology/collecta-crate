@@ -8,8 +8,8 @@ This library will interface with an ro-crate api (now Oni)
 ## TODO
 
 - Test Mock HTTP headers with auth
-- [*] /object
+- [x] /object
 - [ ] /search
 - [ ] /auth
 - [ ] /files
-- [*] provide example.py
+- [x] provide example.py
