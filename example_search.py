@@ -17,3 +17,4 @@ items = client.search.index(
     }
 )
 print(items)
+

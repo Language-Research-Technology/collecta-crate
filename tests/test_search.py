@@ -39,7 +39,6 @@ def test_search(search, mock_client):
     # Assertions
     mock_client.post.assert_called_once_with(
         f"search/index/{index}",
-        data={'query':query},
-        headers={}
+        data={'query':query}
     )
     assert result == mock_response
