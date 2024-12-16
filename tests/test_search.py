@@ -17,13 +17,15 @@ def search(mock_client):
 def test_search(search, mock_client):
     # Input parameters for the method
     index = "items"
-    query = {
-        "bool": {
-            "must": {
-                "terms": {
-                    "@type.keyword": [
-                        "RepositoryCollection"
-                    ]
+    body = {
+        "query": {
+            "bool": {
+                "must": {
+                    "terms": {
+                        "@type.keyword": [
+                            "RepositoryCollection"
+                        ]
+                    }
                 }
             }
         }
@@ -34,11 +36,11 @@ def test_search(search, mock_client):
     mock_client.post.return_value = mock_response
 
     # Call the method
-    result = search.index(index=index, query=query)
+    result = search.index(index=index, body=body)
 
     # Assertions
     mock_client.post.assert_called_once_with(
         f"search/index/{index}",
-        data={'query':query}
+        data=body
     )
     assert result == mock_response

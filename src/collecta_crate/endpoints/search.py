@@ -5,8 +5,5 @@ class Search:
     def __init__(self, client):
         self.client = client
 
-    def index(self, index='items', query={}):
-        data = {
-            'query': query
-        }
-        return self.client.post(f"{SEARCH}/index/{index}", data=data)
+    def index(self, index='items', body={}):
+        return self.client.post(f"{SEARCH}/index/{index}", data=body)
