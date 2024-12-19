@@ -47,7 +47,7 @@ class Objects:
         )
 
     # not sure of this name
-    def get_children_off(self, member_of, offset=0, limit=1000):
+    def get_children_of(self, member_of, offset=0, limit=1000):
         return self._get_object(
             member_of=member_of,
             offset=offset,

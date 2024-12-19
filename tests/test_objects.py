@@ -74,8 +74,8 @@ def test_get_members_off(objects, mock_client):
     )
 
 
-def test_get_children_off(objects, mock_client):
-    objects.get_children_off(member_of='group1', offset=15, limit=25)
+def test_get_children_of(objects, mock_client):
+    objects.get_children_of(member_of='group1', offset=15, limit=25)
     mock_client.get.assert_called_once_with(
         'object',
         params={
